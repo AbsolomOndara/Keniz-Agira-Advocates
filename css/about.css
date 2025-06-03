@@ -1,0 +1,610 @@
+/* About Intro */
+.about-intro {
+    padding: 120px 0;
+    background: white;
+}
+
+.intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.9)), 
+                url('images/stats-bg.jpg') center/cover no-repeat;
+    color: white;
+    position: relative;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.stat-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--secondary);
+    font-family: 'Playfair Display', serif;
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Timeline Section */
+.timeline-section {
+    padding: 120px 0;
+    background: white;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--secondary);
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+    z-index: 2;
+}
+
+.timeline-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-year {
+    width: 120px;
+    height: 120px;
+    background: white;
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 5px solid var(--secondary);
+}
+
+.timeline-content {
+    width: calc(50% - 100px);
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    transform: rotate(45deg);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    text-align: right;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    left: -10px;
+}
+
+.timeline-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.timeline-text {
+    color: var(--dark);
+    line-height: 1.8;
+}
+
+/* Attorney Profile */
+.attorney-section {
+    padding: 120px 0;
+    background: linear-gradient(to right, #f9f9f9 50%, white 50%);
+}
+
+.attorney-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.attorney-image {
+    position: relative;
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.attorney-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.attorney-image:hover .attorney-img {
+    transform: scale(1.05);
+}
+
+.awards-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 180px;
+    height: 180px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 20px 40px rgba(10, 37, 64, 0.3);
+    z-index: 2;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease 0.3s;
+}
+
+.awards-badge.animate {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.award-count {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.award-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.attorney-details {
+    padding-left: 40px;
+}
+
+.attorney-name {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.attorney-title {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.attorney-bio {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 40px;
+    color: var(--dark);
+}
+
+.credentials-list {
+    margin-bottom: 40px;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.credential-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: var(--secondary);
+}
+
+.signature {
+    margin-top: 30px;
+}
+
+.signature img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    padding: 120px 0;
+    background: #f9f9f9;
+}
+
+.philosophy-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.philosophy-video {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    height: 400px;
+}
+
+.philosophy-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(212, 175, 55, 0.9);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    z-index: 2;
+}
+
+.play-button:hover {
+    background: var(--secondary);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.philosophy-content {
+    padding-right: 40px;
+}
+
+.philosophy-points {
+    margin-top: 40px;
+}
+
+.point-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.point-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.point-icon {
+    min-width: 60px;
+    height: 60px;
+    background: var(--secondary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.point-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.point-text {
+    color: var(--dark);
+    line-height: 1.7;
+}
+
+/* Team Section */
+.team-section {
+    padding: 120px 0;
+    background: white;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.team-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.team-image {
+    height: 400px;
+    overflow: hidden;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.1);
+}
+
+.team-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(10, 37, 64, 0.9), transparent);
+    color: white;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.team-card:hover .team-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.team-name {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.team-position {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.team-social {
+    display: flex;
+    gap: 15px;
+}
+
+.team-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.team-social a:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+/* Responsive Adjustments for About Page */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .timeline-line {
+        left: 60px;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-year {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 120px);
+        margin-left: 100px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 100px;
+    }
+    
+    .timeline-content::before {
+        top: -10px;
+        left: 50px !important;
+        right: auto !important;
+    }
+    
+    .attorney-container,
+    .philosophy-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .attorney-details {
+        padding-left: 0;
+        padding-top: 40px;
+    }
+    
+    .philosophy-content {
+        padding-right: 0;
+        order: 2;
+    }
+    
+    .philosophy-video {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-content {
+        width: calc(100% - 80px);
+        margin-left: 80px;
+        padding: 30px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 80px;
+    }
+    
+    .attorney-image {
+        height: 400px;
+    }
+    
+    .awards-badge {
+        width: 140px;
+        height: 140px;
+        right: 0;
+        bottom: -40px;
+    }
+    
+    .attorney-name {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        padding: 30px 15px;
+    }
+    
+    .stat-number {
+        font-size: 2.8rem;
+    }
+    
+    .timeline-year {
+        width: 60px;
+        height: 60px;
+        font-size: 1.3rem;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px;
+        padding: 20px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 60px;
+    }
+    
+    .point-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .point-icon {
+        margin: 0 auto 15px;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
